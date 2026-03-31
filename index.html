@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apex Advisory Services | Strategic & Governance Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2e45;
+    --gold: #c49a3c;
+    --gold-light: #ddb96a;
+    --cream: #f5f0e8;
+    --cream-dark: #ede6d6;
+    --text: #1a1a1a;
+    --muted: #5a6375;
+    --white: #ffffff;
+    --rule: rgba(196,154,60,0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(196,154,60,0.18);
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .nav-brand .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .nav-brand .tagline {
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 0.45rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    transition: background 0.25s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-bg-accent {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(196,154,60,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 9rem 6% 6rem 8%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+    color: var(--white);
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.62);
+    max-width: 480px;
+    margin-bottom: 2.8rem;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: border-color 0.25s, color 0.25s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .hero-right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 8% 6rem 4%;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,154,60,0.22);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .pain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .pain-list li {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.88rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .pain-list li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 6rem 0; }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 620px;
+    line-height: 1.8;
+  }
+
+  .gold-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.85;
+    font-size: 0.97rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .stat-card {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--navy);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-top: 0.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--cream); }
+
+  .services-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: end;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.2rem;
+    border-radius: 3px;
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
+    position: relative;
+  }
+
+  .service-card:hover {
+    border-top-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(13,27,42,0.1);
+  }
+
+  .service-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--navy);
+  }
+
+  .service-card p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .service-items li {
+    font-size: 0.8rem;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .service-items li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  /* ── PACKAGES ── */
+  #packages { background: var(--navy); }
+
+  #packages .section-title { color: var(--white); }
+  #packages .section-subtitle { color: rgba(255,255,255,0.55); }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .package-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    padding: 2.5rem 2rem;
+    border-radius: 3px;
+    transition: border-color 0.3s, background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .package-card.featured {
+    background: rgba(196,154,60,0.1);
+    border-color: var(--gold);
+  }
+
+  .package-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: 0; right: 0;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-bottom-left-radius: 3px;
+  }
+
+  .package-card:hover { border-color: var(--gold); }
+
+  .package-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .package-tier {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .package-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .package-price-note {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2rem;
+  }
+
+  .package-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .package-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .package-features li {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    line-height: 1.45;
+  }
+
+  .package-features li::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  /* ── CLIENTS ── */
+  #clients { background: var(--white); }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .client-sector {
+    background: var(--cream);
+    padding: 1.8rem 2rem;
+    border-radius: 3px;
+  }
+
+  .client-sector h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .client-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .client-tag {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    color: var(--muted);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--cream);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .contact-info p {
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .contact-detail-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .contact-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(13,27,42,0.07);
+  }
+
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-form .form-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 1.8rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--cream-dark);
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 3rem 0 2rem;
+    border-top: 1px solid rgba(196,154,60,0.18);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-brand .sub {
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 8rem 6% 5rem; }
+    .about-grid, .contact-grid, .services-intro { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .clients-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 4rem 0; }
+    .about-stats { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="name">Apex Advisory Services</span>
+    <span class="tagline">Helping Business Leaders Thrive</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-accent"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Strategic Advisory</p>
+    <h1 class="hero-h1">Governance, Strategy, <em>and Results</em> for Association Leaders</h1>
+    <p class="hero-desc">Apex Advisory Services provides strategic, governance, and operational advisory support to professional associations, nonprofits, and service-based organizations — delivering measurable performance and tangible results.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Schedule a Free 30-Minute Call</a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <h3>Common Challenges We Solve</h3>
+      <ul class="pain-list">
+        <li>Governance issues — board effectiveness, bylaws, and committee design</li>
+        <li>Strategic plans that actually get implemented</li>
+        <li>Financial sustainability and profitability</li>
+        <li>Staff capacity and role clarity</li>
+        <li>Event and conference ROI</li>
+        <li>Leadership transitions — new ED, board turnover</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p class="section-label">About Apex</p>
+        <h2 class="section-title">Deep Expertise. Practical Results.</h2>
+        <div class="gold-rule"></div>
+        <p>Apex Advisory Services brings over two decades of hands-on experience inside veterinary medicine, nonprofit associations, and executive leadership — combining strategic insight with ground-level execution to deliver outcomes that last.</p>
+        <p>Led by Dieter M. Haager, Managing Director, Apex draws on an extensive background with organizations including the University of Florida College of Veterinary Medicine and NAVC — giving us rare fluency in the culture, governance, and financial dynamics of professional associations.</p>
+        <p>We don't just advise — we partner with your leadership to clarify priorities, streamline operations, and build capacity that sustains growth long after our engagement ends.</p>
+      </div>
+      <div class="about-stats fade-up">
+        <div class="stat-card">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years in Veterinary & Association Sectors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Sectors Served — Nonprofit & For-Profit</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Core Focus Areas — Strategy, Governance, Operations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">30</div>
+          <div class="stat-label">Complimentary Advisory Call — Minutes, No Obligation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-intro fade-up">
+      <div>
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Advisory Services That Move the Needle</h2>
+        <div class="gold-rule"></div>
+      </div>
+      <p class="section-subtitle">From board governance to financial planning and event management, our services are tailored to the distinct needs of associations, nonprofits, and professional organizations.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card fade-up">
+        <div class="service-icon">📊</div>
+        <h3>Strategic Planning & Implementation</h3>
+        <p>Clear direction, actionable roadmaps, and the accountability structures to follow through.</p>
+        <ul class="service-items">
+          <li>3–5 Year Strategic Plans</li>
+          <li>Annual Operational Roadmaps</li>
+          <li>KPI and Dashboard Setup</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">💼</div>
+        <h3>Financial & Operational Health</h3>
+        <p>Strengthen your financial footing and build the operational structure to support growth.</p>
+        <ul class="service-items">
+          <li>Performance Assessment & Org Design</li>
+          <li>New Revenue Stream Development</li>
+          <li>Multi-Year Budgeting Guidance</li>
+          <li>Staffing & Workflow Optimization</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">🔄</div>
+        <h3>Business Continuity</h3>
+        <p>Maintain momentum through transitions, vacancies, and organizational change.</p>
+        <ul class="service-items">
+          <li>Interim Executive Support</li>
+          <li>Fractional CFO & Financial Management</li>
+          <li>Succession & Transition Planning</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">🏛️</div>
+        <h3>Governance & Board Development</h3>
+        <p>Well-governed boards make better decisions. We build the structures that enable that.</p>
+        <ul class="service-items">
+          <li>Board Roles & Responsibilities</li>
+          <li>Bylaws Review</li>
+          <li>Committee Structure Design</li>
+          <li>Board Onboarding & Coaching</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">🤝</div>
+        <h3>Association Management</h3>
+        <p>Specialized support for nonprofit associations navigating governance and growth.</p>
+        <ul class="service-items">
+          <li>Governance, Training & Facilitation</li>
+          <li>Executive Board Transition Planning</li>
+          <li>Financial Planning & Budget Development</li>
+          <li>Strategic Planning & Revenue Generation</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon">🎯</div>
+        <h3>Event Management & Facilitation</h3>
+        <p>High-performing events and facilitated sessions that deliver real outcomes.</p>
+        <ul class="service-items">
+          <li>Site Selection & Contract Management</li>
+          <li>Onsite AV, F&B, Housing & Staffing</li>
+          <li>Certified Strategic Planning Facilitator</li>
+          <li>Meeting Design & Facilitation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label" style="color:var(--gold)">Engagement Options</p>
+      <h2 class="section-title">Packages Built Around Your Goals</h2>
+      <div class="gold-rule"></div>
+      <p class="section-subtitle">Choose the engagement level that fits your organization's needs and scale. Pricing reflects the value created — not simply hours billed.</p>
+    </div>
+    <div class="packages-grid">
+
+      <div class="package-card fade-up">
+        <div class="package-name">Health Check</div>
+        <div class="package-tier">Starter Package</div>
+        <div class="package-price">$3,500–$7,500</div>
+        <div class="package-price-note">One-time engagement</div>
+        <div class="package-divider"></div>
+        <ul class="package-features">
+          <li>Governance, finance & operations review</li>
+          <li>Stakeholder interviews</li>
+          <li>Written recommendations report</li>
+          <li>Prioritized action steps</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="width:100%;text-align:center;font-size:0.78rem;">Get Started</a>
+      </div>
+
+      <div class="package-card featured fade-up">
+        <div class="package-name">Strategic Reset</div>
+        <div class="package-tier">Growth Package</div>
+        <div class="package-price">$8,500–$20,000</div>
+        <div class="package-price-note">Project-based engagement</div>
+        <div class="package-divider"></div>
+        <ul class="package-features">
+          <li>Strategic Planning Workshop</li>
+          <li>Executive Board Advisory Support</li>
+          <li>Implementation Roadmap</li>
+          <li>KPI and accountability framework</li>
+          <li>Follow-up check-in included</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;">Get Started</a>
+      </div>
+
+      <div class="package-card fade-up">
+        <div class="package-name">Fractional Support</div>
+        <div class="package-tier">Monthly Retainer</div>
+        <div class="package-price">$2,500–$6,500</div>
+        <div class="package-price-note">Per month</div>
+        <div class="package-divider"></div>
+        <ul class="package-features">
+          <li>Ongoing monthly advisory support</li>
+          <li>Board meeting attendance</li>
+          <li>Leadership coaching</li>
+          <li>Operational recommendations</li>
+          <li>Priority email & phone access</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="width:100%;text-align:center;font-size:0.78rem;">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <div class="fade-up" style="max-width:640px;margin-bottom:1rem;">
+      <p class="section-label">Who We Serve</p>
+      <h2 class="section-title">Trusted by Leading Associations & Organizations</h2>
+      <div class="gold-rule"></div>
+      <p class="section-subtitle">We bring particular depth to veterinary, medical, and professional associations — but our methodology applies wherever governance, strategy, and operational excellence matter.</p>
+    </div>
+    <div class="clients-grid fade-up">
+      <div class="client-sector">
+        <h4>Veterinary & Medical Associations</h4>
+        <div class="client-tags">
+          <span class="client-tag">National & Regional Associations</span>
+          <span class="client-tag">Specialty Colleges & Societies</span>
+          <span class="client-tag">Animal Welfare Federations</span>
+          <span class="client-tag">Veterinary Student Associations</span>
+          <span class="client-tag">Technician Associations</span>
+          <span class="client-tag">Continuing Education Bodies</span>
+        </div>
+      </div>
+      <div class="client-sector">
+        <h4>Professional Services & Nonprofits</h4>
+        <div class="client-tags">
+          <span class="client-tag">Dental & Oral Surgery Practices</span>
+          <span class="client-tag">CPA Firms & Institutes</span>
+          <span class="client-tag">Universities & Accreditation Bodies</span>
+          <span class="client-tag">Event Management Companies</span>
+          <span class="client-tag">Small & Mid-Size Businesses</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;padding:2rem 2.5rem;background:var(--cream);border-left:4px solid var(--gold);border-radius:2px;" class="fade-up">
+      <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);font-style:italic;margin-bottom:0.75rem;">"Organizations we've had the privilege to support include the Board of Chief Veterinary Medical Officers, American Board of Veterinary Practitioners, Association of Exotic Mammal Veterinarians, Florida Institute of CPAs, and others across the veterinary and professional services landscape."</p>
+      <p style="font-size:0.8rem;color:var(--muted);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;">— Dieter M. Haager, Managing Director</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <p class="section-label">Let's Talk</p>
+        <h2>Schedule Your Complimentary 30-Minute Advisory Call</h2>
+        <div class="gold-rule"></div>
+        <p>Whether you're navigating a governance challenge, planning your next strategic cycle, or preparing for a leadership transition — we'd love to hear what you're facing. No pitch, no pressure: just a candid conversation about your organization's priorities.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <span>Newberry, FL — serving associations nationwide</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <span>ApexAdvisoryServices.com</span>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <p style="font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--navy);margin-bottom:0.75rem;">What Happens Next</p>
+          <div style="display:flex;flex-direction:column;gap:0.7rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;font-size:0.87rem;color:var(--muted);">
+              <span style="background:var(--navy);color:var(--gold);font-size:0.7rem;font-weight:700;padding:0.25rem 0.55rem;border-radius:2px;flex-shrink:0;">1</span>
+              Submit the form and we'll respond within one business day
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;font-size:0.87rem;color:var(--muted);">
+              <span style="background:var(--navy);color:var(--gold);font-size:0.7rem;font-weight:700;padding:0.25rem 0.55rem;border-radius:2px;flex-shrink:0;">2</span>
+              We'll schedule a 30-minute call at your convenience
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;font-size:0.87rem;color:var(--muted);">
+              <span style="background:var(--navy);color:var(--gold);font-size:0.7rem;font-weight:700;padding:0.25rem 0.55rem;border-radius:2px;flex-shrink:0;">3</span>
+              If there's a fit, we'll propose a tailored engagement
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-up">
+        <h3>Get in Touch</h3>
+        <p class="form-note">Complimentary 30-minute advisory call for association and organizational leaders.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="jane@association.org" />
+        </div>
+        <div class="form-group">
+          <label>Organization</label>
+          <input type="text" placeholder="Your organization name" />
+        </div>
+        <div class="form-group">
+          <label>Primary Challenge or Interest</label>
+          <select>
+            <option value="" disabled selected>Select one</option>
+            <option>Strategic Planning</option>
+            <option>Board Governance</option>
+            <option>Financial Health & Budgeting</option>
+            <option>Leadership or Executive Transition</option>
+            <option>Fractional / Interim Support</option>
+            <option>Event Management</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us More (Optional)</label>
+          <textarea placeholder="Briefly describe what you're navigating..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;text-align:center;border-radius:2px;" onclick="alert('Thank you! We\'ll be in touch within one business day.')">Request My Free Advisory Call</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="name">Apex Advisory Services, LLC</div>
+        <div class="sub">Helping Business Leaders Thrive</div>
+      </div>
+      <p class="footer-tagline">Strategic clarity. Operational excellence. Measurable results.</p>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2025 Apex Advisory Services, LLC · Newberry, FL · EIN 41-4090711 · All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const els = document.querySelectorAll('.fade-up');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+
+  // Stagger sibling cards
+  document.querySelectorAll('.services-grid, .packages-grid, .clients-grid').forEach(grid => {
+    grid.querySelectorAll('.fade-up').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.09}s`;
+    });
+  });
+</script>
+</body>
+</html>
