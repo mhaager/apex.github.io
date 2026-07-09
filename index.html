@@ -631,6 +631,16 @@
     flex-shrink: 0;
   }
 
+  .contact-detail a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    transition: color 0.2s;
+  }
+
+  .contact-detail a:hover { color: var(--gold); }
+
   .contact-form {
     background: var(--white);
     padding: 2.5rem;
@@ -1106,7 +1116,7 @@
           <div style="display:flex;flex-direction:column;gap:0.7rem;">
             <div style="display:flex;gap:1rem;align-items:flex-start;font-size:0.87rem;color:var(--muted);">
               <span style="background:var(--navy);color:var(--gold);font-size:0.7rem;font-weight:700;padding:0.25rem 0.55rem;border-radius:2px;flex-shrink:0;">1</span>
-              Submit the form and we'll respond within one business day
+              Select your primary challenge and click the email link in the form — we'll respond within one business day
             </div>
             <div style="display:flex;gap:1rem;align-items:flex-start;font-size:0.87rem;color:var(--muted);">
               <span style="background:var(--navy);color:var(--gold);font-size:0.7rem;font-weight:700;padding:0.25rem 0.55rem;border-radius:2px;flex-shrink:0;">2</span>
@@ -1121,28 +1131,10 @@
       </div>
       <div class="contact-form fade-up">
         <h3>Get in Touch</h3>
-        <p class="form-note">Complimentary 30-minute advisory call for association and organizational leaders.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Jane" />
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Smith" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="jane@association.org" />
-        </div>
-        <div class="form-group">
-          <label>Organization</label>
-          <input type="text" placeholder="Your organization name" />
-        </div>
+        <p class="form-note">Complimentary 30-minute advisory call for association and organizational leaders. Select your primary challenge, then click the email link below to reach out.</p>
         <div class="form-group">
           <label>Primary Challenge or Interest</label>
-          <select>
+          <select id="primaryChallenge">
             <option value="" disabled selected>Select one</option>
             <option>Strategic Planning</option>
             <option>Board Governance</option>
@@ -1153,11 +1145,20 @@
             <option>Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Tell Us More (Optional)</label>
-          <textarea placeholder="Briefly describe what you're navigating..."></textarea>
+        <div style="margin-top:1.5rem;">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <span><a id="emailLink" href="mailto:dieter@apexadvisorysvcs.com">dieter@apexadvisorysvcs.com</a></span>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">💼</div>
+            <span><a href="https://www.linkedin.com/in/dmhaager/" target="_blank" rel="noopener">linkedin.com/in/dmhaager</a></span>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <span><a href="tel:+13527451659">352.745.1659</a></span>
+          </div>
         </div>
-        <button class="btn-primary" style="width:100%;text-align:center;border-radius:2px;" onclick="alert('Thank you! We\'ll be in touch within one business day.')">Request My Free Advisory Call</button>
       </div>
     </div>
   </div>
@@ -1202,6 +1203,18 @@
       el.style.transitionDelay = `${i * 0.09}s`;
     });
   });
+
+  // Build the mailto subject/body from the contact form fields
+  const emailLink = document.getElementById('emailLink');
+  const challengeSelect = document.getElementById('primaryChallenge');
+  if (emailLink && challengeSelect) {
+    emailLink.addEventListener('click', () => {
+      const challenge = challengeSelect.value || 'General Inquiry';
+      const subject = `Advisory Inquiry: ${challenge}`;
+      const body = `I'd like to schedule a confidential discussion about my organization's challenges.\n\nPrimary challenge or interest: ${challenge}`;
+      emailLink.href = `mailto:dieter@apexadvisorysvcs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
 </script>
 </body>
 </html>
