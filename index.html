@@ -586,15 +586,9 @@
 
   .clients-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
     margin-top: 3rem;
-  }
-
-  .client-sector {
-    background: var(--cream);
-    padding: 1.8rem 2rem;
-    border-radius: 3px;
   }
 
   .client-sector h4 {
@@ -603,22 +597,33 @@
     font-weight: 600;
     color: var(--navy);
     margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--cream-dark);
   }
 
-  .client-tags {
+  .client-list {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
-  .client-tag {
-    background: var(--white);
-    border: 1px solid var(--cream-dark);
-    color: var(--muted);
-    font-size: 0.75rem;
-    padding: 0.3rem 0.75rem;
-    border-radius: 2px;
+  .client-list li {
+    font-size: calc(0.85rem + 3px);
+    line-height: 1.5;
     font-weight: 400;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .client-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 1.2rem;
+    line-height: 1.2;
   }
 
   /* ── CONTACT ── */
@@ -1021,33 +1026,33 @@
     <div class="clients-grid fade-up">
       <div class="client-sector">
         <h4>Organizations We Support</h4>
-        <div class="client-tags">
-          <span class="client-tag">Veterinary and Healthcare Organizations</span>
-          <span class="client-tag">Professional Associations</span>
-          <span class="client-tag">Service-based and Nonprofit Organizations</span>
-          <span class="client-tag">Organizations in Transition</span>
-        </div>
-    </div>
-    <div class="client-sector">
+        <ul class="client-list">
+          <li>Veterinary and Healthcare Organizations</li>
+          <li>Professional Associations</li>
+          <li>Service-based and Nonprofit Organizations</li>
+          <li>Organizations in Transition</li>
+        </ul>
+      </div>
+      <div class="client-sector">
         <h4>Typical Engagements</h4>
-        <div class="client-tags">
-          <span class="client-tag">Interim Leadership to Support Initiatives or during Executive Transitions</span>
-          <span class="client-tag">Launching or Rescuing Strategic Initiatives</span>
-          <span class="client-tag">Governance Restructuring</span>
-          <span class="client-tag">Operational Assessments and Process Redesign</span>
-          <span class="client-tag">Revenue Diversification Planning</span>
-        </div>
-    </div>
-  <div class="client-sector">
+        <ul class="client-list">
+          <li>Interim Leadership to Support Initiatives or during Executive Transitions</li>
+          <li>Launching or Rescuing Strategic Initiatives</li>
+          <li>Governance Restructuring</li>
+          <li>Operational Assessments and Process Redesign</li>
+          <li>Revenue Diversification Planning</li>
+        </ul>
+      </div>
+      <div class="client-sector">
         <h4>Results Organizations Can Expect</h4>
-        <div class="client-tags">
-          <span class="client-tag">Improved margins and financial performance</span>
-          <span class="client-tag">Optimized timelines and deliverables</span>
-          <span class="client-tag">Reduced resource needs</span>
-          <span class="client-tag">Long-term strategic growth</span>
-        </div>
+        <ul class="client-list">
+          <li>Improved margins and financial performance</li>
+          <li>Optimized timelines and deliverables</li>
+          <li>Reduced resource needs</li>
+          <li>Long-term strategic growth</li>
+        </ul>
+      </div>
     </div>
-</div>
     
 
   </div>
